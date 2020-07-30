@@ -11,8 +11,7 @@
 ; deb key bindings
 (global-set-key (kbd "C-c b") (lambda () (interactive) (switch-to-project-buffer)))
 (global-set-key (kbd "C-c t") (lambda () (interactive) (shell)) )
-(global-set-key (kbd "C-c M-r") (lambda () (interactive) (load "~/.emacs.d/init.el") ) )
-(global-set-key (kbd "C-c r") (lambda () (interactive) (revert-buffer) ) )
+(global-set-key (kbd "C-c r") (lambda () (interactive) (load "~/.emacs.d/init.el") ) )
 
 ; c x o works in term
 ;(add-hook 'term-mode-hook
@@ -69,5 +68,8 @@
 (set-face-background 'mode-line "#3b3b3e")
 (set-face-foreground 'mode-line-inactive "#ffbbff")
 (set-face-background 'mode-line-inactive "#3b3b3e")
+
+; always visual line for text
+(add-hook 'text-mode-hook #'visual-line-mode)
 
 (provide 'debmacs)

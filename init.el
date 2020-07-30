@@ -56,11 +56,6 @@
   :ensure t
   :hook (after-init . global-company-mode))
 
-;(use-package dired-sidebar
-;  :ensure t
-;  :commands (dired-sidebar-toggle-sidebar)
-;  :bind ("<f3>" . dired-sidebar-toggle-sidebar))
-
 (use-package treemacs
   :ensure t
   :init
@@ -76,9 +71,9 @@
 
 (use-package projectile
   :ensure t
-  :init
-  (setq projectile-project-search-path "~/code")
-  :bind (("C-c p" . projectile-command-map)))
+  :disabled t
+  :bind ("C-p" . projectile-mode-map)
+  :init (projectile-global-mode))
 
 (use-package treemacs-projectile
   :after treemacs projectile
