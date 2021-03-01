@@ -6,3 +6,4 @@ elpa
 projectile-bookmarks.eld
 tramp
 .cache
+session.*
