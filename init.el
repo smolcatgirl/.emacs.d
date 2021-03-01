@@ -16,7 +16,7 @@
      ("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (elixir-mode treemacs-projectile treemacs use-package slime projectile haskell-mode dired-sidebar alchemist))))
+    (web-mode php-mode elixir-mode treemacs-projectile treemacs use-package slime projectile haskell-mode dired-sidebar alchemist))))
 
 (package-initialize)
 
@@ -24,19 +24,15 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(use-package php-mode
+  :ensure t)
 
-(defun use-project-mix-formatter ()
-  (if (and (package-installed-p 'projectile) (projectile-project-p))
-      (setq elixir-format-arguments
-            (list "--dot-formatter"
-                  (concat (locate-dominating-file buffer-file-name ".formatter.exs") ".formatter.exs")))
-    (setq elixir-format-arguments nil)))
+(use-package web-mode
+  :ensure t)
 
 (use-package elixir-mode
   :ensure t
   :bind (("<f7>" . elixir-format))
-  ;:hook ((elixir-format . use-project-mix-formatter)
-  ;       (before-save . elixir-format))
   :mode
   (("\\.exs$" . elixir-mode)
    ("\\.ex$" . elixir-mode)))
@@ -78,7 +74,6 @@
 (use-package treemacs-projectile
   :after treemacs projectile
   :ensure t)
-
 
 (use-package debmacs
   :load-path "~/.emacs.d/plugins/")
