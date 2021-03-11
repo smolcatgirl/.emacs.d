@@ -68,6 +68,9 @@
 (set-face-background 'mode-line "#3b3b3e")
 (set-face-foreground 'mode-line-inactive "#ffbbff")
 (set-face-background 'mode-line-inactive "#3b3b3e")
+(set-face-background 'match "#ffaaff")
+(set-face-background 'region "#ffaaff")
+(set-face-background 'cursor "#ffaaff")
 
 ; always visual line for text
 (add-hook 'text-mode-hook #'visual-line-mode)
